@@ -1,5 +1,7 @@
 # React-native Test App
 
+This is the engineer ai test application to get the country and weather information.
+
 Currently includes:
 
 - React Native
@@ -13,7 +15,7 @@ Currently includes:
 The project's structure will look similar to this:
 
 ```
-react-native-ai-app
+3e80e7b12a18ce17811d
 ├── src
 │   ├── assets
 │   ├── components
@@ -47,7 +49,6 @@ react-native-ai-app
 └── package.json
 
 ```
-
 
 ### ./src directory
 
