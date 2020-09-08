@@ -20,7 +20,6 @@ const country = {
 
 const CountryDetail = props => {
   const {countryDetail, weatherLoader, weatherDetail} = props;
-  console.log('weatherDetail', weatherDetail);
 
   const handleWeatherSubmit = capital => {
     const {

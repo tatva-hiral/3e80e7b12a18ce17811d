@@ -61,7 +61,6 @@ function* getWeatherDetailHandler(value) {
     const capitalName = value.payload || '';
     const url = endpoint.WEATHER_URL + capitalName;
     const weatherResponse = yield getWeather(url, '');
-    console.log('weather respnose', weatherResponse);
     if (weatherResponse.success) {
       yield put(CountryAction.setWeatherDetail(weatherResponse.data.current));
     } else {
