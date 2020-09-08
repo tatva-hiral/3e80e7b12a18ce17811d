@@ -41,15 +41,18 @@ function* getCountryRequestHandler(value) {
               item => item.name.toLowerCase() == countryName.toLowerCase(),
             )[0];
       yield put(CountryAction.setCountryData(countryDetail));
+      yield put(CountryAction.setWeatherDetail(null));
       NavigationService.navigate(MODULES.countryDetail.name);
     } else {
       Toast.show(I18n.t('errorMessage'));
       yield put(CountryAction.setCountryData(null));
+      yield put(CountryAction.setWeatherDetail(null));
     }
   } catch (error) {
     console.log('getCountryRequestHandler error', error);
     Toast.show(I18n.t('errorMessage'));
     yield put(CountryAction.setCountryData(null));
+    yield put(CountryAction.setWeatherDetail(null));
   }
 }
 
@@ -60,14 +63,7 @@ function* getWeatherDetailHandler(value) {
     const weatherResponse = yield getWeather(url, '');
     console.log('weather respnose', weatherResponse);
     if (weatherResponse.success) {
-      // const countryDetail =
-      //   response.data.length == 1
-      //     ? response.data[0]
-      //     : response.data.filter(
-      //         item => item.name.toLowerCase() == countryName.toLowerCase(),
-      //       )[0];
-      // yield put(CountryAction.setCountryData(countryDetail));
-      // NavigationService.navigate(MODULES.countryDetail.name);
+      yield put(CountryAction.setWeatherDetail(weatherResponse.data.current));
     } else {
       Toast.show(I18n.t('errorMessage'));
       yield put(CountryAction.setWeatherDetail(null));

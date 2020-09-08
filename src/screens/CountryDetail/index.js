@@ -7,6 +7,7 @@ import * as CountryAction from '../../redux/actions/country';
 
 const mapStateToProps = state => ({
   countryDetail: state.country.countryDetail,
+  weatherDetail: state.country.weatherDetail,
   weatherLoader: state.country.weatherLoader,
 });
 
